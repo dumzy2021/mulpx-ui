@@ -79,7 +79,6 @@ export class QuickLinksComponent implements OnInit {
   getTransactions() {
     this.transactionService.getUserTransactions().subscribe({
       next: (data: UserTransaction[]) => {
-        console.log(data);
         this.userTransactions = data;
       },
     });
@@ -94,7 +93,6 @@ export class QuickLinksComponent implements OnInit {
     this.transactionService.sendMoney(this.amountForm.value).subscribe({
       next: (data: any) => {
         this.close.nativeElement.click();
-        console.log(data);
         this.message = data?.message;
         this.loading = false;
         this.amountForm.reset();
@@ -103,6 +101,7 @@ export class QuickLinksComponent implements OnInit {
       error: (error) => {
         this.failed = true;
         this.loading = false;
+        this.openModal();
       },
     });
   }
