@@ -12,6 +12,7 @@ import { PaymentCardsComponent } from './components/payment-cards/payment-cards.
 import { QuickLinksComponent } from './components/quick-links/quick-links.component';
 import { RecentActivitiesComponent } from './components/recent-activities/recent-activities.component';
 import { OverviewMapComponent } from './components/overview-map/overview-map.component';
+import { HighchartsChartModule } from 'highcharts-angular';
 
 @NgModule({
   declarations: [
@@ -23,13 +24,15 @@ import { OverviewMapComponent } from './components/overview-map/overview-map.com
     PaymentCardsComponent,
     QuickLinksComponent,
     RecentActivitiesComponent,
-    OverviewMapComponent
+    OverviewMapComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,ReactiveFormsModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    HighchartsChartModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
