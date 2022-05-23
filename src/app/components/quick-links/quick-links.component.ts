@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import * as Highcharts from 'highcharts';
 @Component({
   selector: 'app-quick-links',
@@ -6,6 +6,7 @@ import * as Highcharts from 'highcharts';
   styleUrls: ['./quick-links.component.scss'],
 })
 export class QuickLinksComponent implements OnInit {
+  @ViewChild('close') close!: ElementRef;
   highcharts = Highcharts;
   chartOptions: Highcharts.Options = {
     title: {
@@ -13,7 +14,7 @@ export class QuickLinksComponent implements OnInit {
     },
     xAxis: {
       title: {
-        text: 'Tokyo',
+        text: 'Nigeria',
       },
       categories: [
         'Jan',

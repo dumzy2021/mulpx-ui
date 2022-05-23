@@ -56,7 +56,7 @@
       margin: 1rem 0;
     }
     .card-title {
-      font-size: 1rem;
+      font-size: 0.9rem;
     }
     .card-subtitle {
       font-size: 0.8rem;
@@ -90,6 +90,10 @@
   .multiplepay-subtitle {
     width: 80%;
   }
+}
+.overview-container {
+  height: 520px;
+  overflow-y: scroll;
 }
 
 // Recent activities
@@ -161,5 +165,12 @@
   }
   .activity-date {
     text-align: end;
+  }
+}
+
+@media (min-width: 1400px) {
+  .row-divder {
+    border-top: 1.7px solid #dbd0c2;
+    padding-top: 2rem;
   }
 }

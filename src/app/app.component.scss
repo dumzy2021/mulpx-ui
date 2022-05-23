@@ -3,20 +3,26 @@
   padding: 15px;
 }
 .dashbord-content {
-
   background: #fff;
   border-radius: 20px;
-    padding: 10px 0;
-    min-height: calc(100vh - 60px);
+  padding: 10px 0;
+  min-height: calc(100vh - 60px);
+}
+@media (min-width: 992px) {
+  .main-wrapper {
+    padding: 30px 15px;
+    padding-left: 290px;
   }
-  @media (min-width: 992px) {
-    .main-wrapper {
-      padding: 30px;
-      padding-left: 290px;
-
-    }
-    .dashbord-content{
+  .dashbord-content {
+    padding: 30px 0;
+  }
+}
+@media (min-width: 1100px) {
+  .main-wrapper {
     padding: 30px;
-
+    padding-left: 290px;
+  }
+  .dashbord-content {
+    padding: 30px 15px;
   }
 }
