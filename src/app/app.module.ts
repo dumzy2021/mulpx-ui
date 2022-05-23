@@ -9,6 +9,9 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { DashboardLayoutComponent } from './layouts/dashboard-layout/dashboard-layout.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { PaymentCardsComponent } from './components/payment-cards/payment-cards.component';
+import { QuickLinksComponent } from './components/quick-links/quick-links.component';
+import { RecentActivitiesComponent } from './components/recent-activities/recent-activities.component';
+import { OverviewMapComponent } from './components/overview-map/overview-map.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +20,10 @@ import { PaymentCardsComponent } from './components/payment-cards/payment-cards.
     NavbarComponent,
     DashboardLayoutComponent,
     DashboardComponent,
-    PaymentCardsComponent
+    PaymentCardsComponent,
+    QuickLinksComponent,
+    RecentActivitiesComponent,
+    OverviewMapComponent
   ],
   imports: [
     BrowserModule,
