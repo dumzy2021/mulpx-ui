@@ -1,63 +1,72 @@
-.quick-links{
-
-  .title,.multiplepay-title,.card-title{
-   color: #000;
-   margin-bottom: 0.4rem;
+.quick-links {
+  .title,
+  .multiplepay-title,
+  .card-title,
+  .group-title {
+    color: #000;
+    margin-bottom: 0.4rem;
     text-transform: capitalize;
     font-size: 1.2rem;
     font-weight: 500;
   }
-  .subtitle{
+  .subtitle {
     color: #787878;
     font-size: 0.8rem;
   }
- .multiple-pay{
-  background: #F5F1EC;
-  padding: 10px;
-  border-radius: 15px;
-  .hand-icon{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #0D4138;
-    padding: 20px 8px;
-    border-radius: 8px;
-  }
+  .multiple-pay {
+    background: #f5f1ec;
+    padding: 10px;
+    border-radius: 15px;
+    .hand-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #0d4138;
+      padding: 20px 8px;
+      border-radius: 8px;
+    }
 
-  .multiplepay-title{
+    .multiplepay-title {
+      font-size: 1rem;
+    }
+    .multiplepay-subtitle {
+      font-size: 0.8rem;
+      margin-bottom: 0.5rem;
+    }
+    .primary-btn {
+      border: 0;
+      padding: 5px 10px;
+      background: #0d4138;
+      border-radius: 5px;
+      color: #fff;
+      font-size: 0.9rem;
+      text-transform: capitalize;
+    }
+  }
+  .quick-link-card {
+    padding: 15px 10px;
+    border-radius: 15px;
+    border: 2px solid #dba976;
+    margin-top: 2rem;
+    ._icon {
+      display: inline-block;
+      margin: 1rem 0;
+    }
+    .card-title {
+      font-size: 1rem;
+    }
+    .card-subtitle {
+      font-size: 0.8rem;
+      margin-bottom: 0.5rem;
+    }
+  }
+  .group-title {
     font-size: 1rem;
-
   }
-  .multiplepay-subtitle{
-    font-size: 0.8rem;
-    margin-bottom: 0.5rem;
-  }
-  .primary-btn{
-    border: 0;
-    padding: 5px 10px;
-    background: #0D4138;
-    border-radius: 5px;
-    color: #fff;
-    font-size: 0.9rem;
+  .view-group {
     text-transform: capitalize;
-  }
- }
- .quick-link-card{
-  padding: 15px 10px;
-  border-radius: 15px;
-  border: 2px solid #DBA976;
-  margin-top: 2rem;
-  ._icon{
-    display: inline-block;
-  margin: 1rem 0;
-  }
-  .card-title{
-    font-size: 1rem;
-  }
-  .card-subtitle{
+    color: #0dba9c;
     font-size: 0.8rem;
     margin-bottom: 0.5rem;
-
   }
- }
 }
