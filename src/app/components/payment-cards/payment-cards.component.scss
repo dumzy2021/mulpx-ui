@@ -1,0 +1,27 @@
+.payment-card{
+  background: #7D5C44;
+  border-radius: 15px;
+  padding: 12px;
+  color: #fff;
+  position: relative;
+  .card-icon{
+    margin-bottom: 0.8rem;
+    display: inline-block;
+  }
+  .card-amount{
+    margin-bottom: 0.6rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+  }
+  .card-title{
+    font-size: 0.7rem;
+    font-weight: 300;
+    text-transform: capitalize;
+  }
+  .card-refresh{
+    position: absolute;
+    bottom: 1rem;
+    right: 0.7rem;
+    z-index: 1;
+  }
+}

@@ -1,0 +1,22 @@
+.main-wrapper {
+  background: #fff6ed;
+  padding: 15px;
+}
+.dashbord-content {
+
+  background: #fff;
+  border-radius: 20px;
+    padding: 10px;
+    min-height: calc(100vh - 60px);
+  }
+  @media (min-width: 992px) {
+    .main-wrapper {
+      padding: 30px;
+      padding-left: 290px;
+
+    }
+    .dashbord-content{
+    padding: 30px;
+
+  }
+}
