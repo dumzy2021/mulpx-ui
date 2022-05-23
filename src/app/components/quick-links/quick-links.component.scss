@@ -17,6 +17,9 @@
     background: #f5f1ec;
     padding: 10px;
     border-radius: 15px;
+    .multiplepay-image {
+      display: none;
+    }
     .hand-icon {
       display: flex;
       align-items: center;
@@ -68,5 +71,23 @@
     color: #0dba9c;
     font-size: 0.8rem;
     margin-bottom: 0.5rem;
+  }
+  .add-payment {
+    border: 1.6px solid #0dba9c;
+    padding: 0.7rem;
+    display: inline-block;
+    border-radius: 50%;
+  }
+  .add-payment-text {
+    margin: 0;
+    font-size: 0.8rem;
+    text-transform: capitalize;
+    color: #0dba9c;
+    font-weight: 500;
+  }
+}
+@media (min-width: 425px) {
+  .multiplepay-subtitle {
+    width: 80%;
   }
 }
