@@ -189,6 +189,31 @@
   color: #888888;
   margin-bottom: 1rem;
 }
+.transaction-icon {
+  display: inline-grid;
+  width: 100px;
+  place-items: center;
+  height: 100px;
+  background: #7d5c44;
+  border-radius: 50%;
+  margin-bottom: 2rem;
+  img {
+    width: 40px;
+  }
+}
+
+.transaction-message {
+  font-size: 1rem;
+}
+.invalid-transaction {
+  background: #e2574c;
+}
+@media (min-width: 576px) {
+  .transaction-message {
+    font-size: 1.3rem;
+    font-weight: 600;
+  }
+}
 @media (min-width: 1400px) {
   .row-divder {
     border-top: 1.7px solid #dbd0c2;

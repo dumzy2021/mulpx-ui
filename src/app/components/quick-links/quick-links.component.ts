@@ -9,9 +9,12 @@ import { TransactionService } from 'src/app/services/transaction.service';
   styleUrls: ['./quick-links.component.scss'],
 })
 export class QuickLinksComponent implements OnInit {
+  failed: boolean = false;
   loading: boolean = false;
+  message: string = '';
   amountForm!: FormGroup;
   @ViewChild('close') close!: ElementRef;
+  @ViewChild('open') open!: ElementRef;
   userTransactions: UserTransaction[] = [];
 
   highcharts = Highcharts;
@@ -55,9 +58,7 @@ export class QuickLinksComponent implements OnInit {
   constructor(
     private transactionService: TransactionService,
     private fb: FormBuilder
-  ) {
-    // this.close.nativeElement.click();
-  }
+  ) {}
   get amount() {
     return this.amountForm.get('amount');
   }
@@ -68,7 +69,13 @@ export class QuickLinksComponent implements OnInit {
     });
     this.getTransactions();
   }
-
+  openModal() {
+    this.open.nativeElement.click();
+  }
+  resetModal() {
+    this.failed = false;
+    this.message = '';
+  }
   getTransactions() {
     this.transactionService.getUserTransactions().subscribe({
       next: (data: UserTransaction[]) => {
@@ -85,13 +92,16 @@ export class QuickLinksComponent implements OnInit {
     }
     this.loading = true;
     this.transactionService.sendMoney(this.amountForm.value).subscribe({
-      next: (data) => {
+      next: (data: any) => {
         this.close.nativeElement.click();
         console.log(data);
+        this.message = data?.message;
         this.loading = false;
         this.amountForm.reset();
+        this.openModal();
       },
       error: (error) => {
+        this.failed = true;
         this.loading = false;
       },
     });

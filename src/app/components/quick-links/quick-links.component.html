@@ -140,7 +140,7 @@
       </highcharts-chart>
     </div>
   </div>
-
+  <!-- SEND MONEY MODAL -->
   <div class="col-12">
     <!-- Modal -->
     <div
@@ -216,24 +216,75 @@
               </div>
             </form>
           </div>
-          <!-- MODAL FOOTER -->
-          <!-- <div class="modal-footer">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESUSEABLE MODAL -->
+
+  <button
+    type="button"
+    class="btn btn-primary"
+    data-bs-toggle="modal"
+    data-bs-target="#exampleModal2"
+    hidden
+    #open
+  >
+    Launch demo modal
+  </button>
+  <div class="col-12">
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModal2"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
             <button
               type="button"
-              class="btn btn-secondary"
+              class="btn-close"
               data-bs-dismiss="modal"
-              #close
-            >
-              Close
-            </button>
-            <button
-              type="button"
-              class="btn btn-primary"
-              (click)="onFormSubmit()"
-            >
-              Save changes
-            </button>
-          </div> -->
+              aria-label="Close"
+              (click)="resetModal()"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <!-- MODAL BODY -->
+            <div class="row mb-4">
+              <div class="col-12 text-center">
+                <div
+                  class="transaction-icon"
+                  [ngClass]="{ 'invalid-transaction': failed }"
+                >
+                  <img src="assets/images/check.png" *ngIf="!failed" alt="" />
+                  <img src="assets/images/close.png" alt="" *ngIf="failed" />
+                </div>
+              </div>
+              <div class="col-12 text-center">
+                <p class="transaction-message">
+                  {{ failed ? "Transaction Failed!" : message }}
+                </p>
+              </div>
+
+              <div class="d-grid gap-2 mt-5 mb-3">
+                <button
+                  (click)="resetModal()"
+                  class="btn btn-primary modal-btn"
+                  type="button"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                  #close
+                >
+                  Done
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
