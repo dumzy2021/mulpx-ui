@@ -1,4 +1,5 @@
 <div class="row row-divder mt-5">
+  <!-- QUICK LINKS -->
   <div class="col-12 col-md-6 mb-5 col-xxl-4 shadow-sm">
     <div class="quick-links h-100">
       <p class="title">quick links</p>
@@ -93,92 +94,33 @@
       </div>
       <div class="row">
         <div class="overview-container">
-          <div class="col-12 mt-3 col-sm-6 col-md-12">
+          <div
+            class="col-12 mt-3 col-sm-6 col-md-12"
+            *ngFor="let transaction of userTransactions"
+          >
             <div class="activity-card">
               <div class="activity-icon">
                 <img src="assets/images/message.png" alt="" />
               </div>
               <div class="activity-content">
                 <div class="activity-box-1">
-                  <p class="activity-name">salary payment</p>
-                  <p class="activity-log">12 of 12 people sent</p>
+                  <p class="activity-name">
+                    {{ transaction.transactionDescription }}
+                  </p>
+                  <p class="activity-log">
+                    {{ transaction.transactionStatus }}
+                  </p>
                 </div>
                 <div class="activity-box-2">
-                  <p class="activity-amount">N200,000</p>
-                  <p class="activity-subtitle">total payment</p>
-                  <p class="activity-date">today</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 mt-3 col-sm-6 col-md-12">
-            <div class="activity-card">
-              <div class="activity-icon">
-                <img src="assets/images/message.png" alt="" />
-              </div>
-              <div class="activity-content">
-                <div class="activity-box-1">
-                  <p class="activity-name">salary payment</p>
-                  <p class="activity-log">12 of 12 people sent</p>
-                </div>
-                <div class="activity-box-2">
-                  <p class="activity-amount">N200,000</p>
-                  <p class="activity-subtitle">total payment</p>
-                  <p class="activity-date">today</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 mt-3 col-sm-6 col-md-12">
-            <div class="activity-card">
-              <div class="activity-icon">
-                <img src="assets/images/message.png" alt="" />
-              </div>
-              <div class="activity-content">
-                <div class="activity-box-1">
-                  <p class="activity-name">salary payment</p>
-                  <p class="activity-log">12 of 12 people sent</p>
-                </div>
-                <div class="activity-box-2">
-                  <p class="activity-amount">N200,000</p>
-                  <p class="activity-subtitle">total payment</p>
-                  <p class="activity-date">today</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 mt-3 col-sm-6 col-md-12">
-            <div class="activity-card">
-              <div class="activity-icon">
-                <img src="assets/images/message.png" alt="" />
-              </div>
-              <div class="activity-content">
-                <div class="activity-box-1">
-                  <p class="activity-name">salary payment</p>
-                  <p class="activity-log">12 of 12 people sent</p>
-                </div>
-                <div class="activity-box-2">
-                  <p class="activity-amount">N200,000</p>
-                  <p class="activity-subtitle">total payment</p>
-                  <p class="activity-date">today</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 mt-3 col-sm-6 col-md-12">
-            <div class="activity-card">
-              <div class="activity-icon">
-                <img src="assets/images/message.png" alt="" />
-              </div>
-              <div class="activity-content">
-                <div class="activity-box-1">
-                  <p class="activity-name">salary payment</p>
-                  <p class="activity-log">12 of 12 people sent</p>
-                </div>
-                <div class="activity-box-2">
-                  <p class="activity-amount">N200,000</p>
-                  <p class="activity-subtitle">total payment</p>
-                  <p class="activity-date">today</p>
+                  <p class="activity-amount">
+                    {{ transaction.transactionAmount | currency: "N" }}
+                  </p>
+                  <p class="activity-subtitle">
+                    {{ transaction.transactionType }}
+                  </p>
+                  <p class="activity-date">
+                    {{ transaction.transactionDate | date: "shortDate" }}
+                  </p>
                 </div>
               </div>
             </div>
@@ -193,23 +135,13 @@
       <highcharts-chart
         [Highcharts]="highcharts"
         [options]="chartOptions"
-        [style]="{ width: '100%', display: 'block', height: '80%' }"
+        [style]="{ width: '100%', display: 'block', height: '100%' }"
       >
       </highcharts-chart>
     </div>
   </div>
 
   <div class="col-12">
-    <!-- Button trigger modal -->
-    <button
-      type="button"
-      class="btn btn-primary"
-      data-bs-toggle="modal"
-      data-bs-target="#exampleModal"
-    >
-      Launch demo modal
-    </button>
-
     <!-- Modal -->
     <div
       class="modal fade"
@@ -221,16 +153,71 @@
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
             <button
               type="button"
               class="btn-close"
               data-bs-dismiss="modal"
               aria-label="Close"
+              #close
             ></button>
           </div>
-          <div class="modal-body">...</div>
-          <div class="modal-footer">
+          <div class="modal-body">
+            <!-- MODAL BODY -->
+            <div class="row mb-4">
+              <div class="col-12 col-md-7">
+                <h3 class="form-title">Send Money</h3>
+                <p class="form-subtitle">
+                  Your loved ones can receive their funds without leaving the
+                  house.
+                </p>
+              </div>
+              <div class="col-md-5 d-none d-md-block text-center">
+                <img src="assets/images/send-money.png" alt="" />
+              </div>
+            </div>
+
+            <form [formGroup]="amountForm">
+              <div class="amount-form">
+                <label for="amount">Amount</label>
+                <div class="input-group input-group-lg">
+                  <span class="input-group-text">N</span>
+                  <input
+                    type="number"
+                    class="form-control"
+                    formControlName="amount"
+                    id="amount"
+                  />
+                </div>
+                <div
+                  *ngIf="amount?.invalid && (amount?.dirty || amount?.touched)"
+                  class="text-danger"
+                >
+                  <small *ngIf="amount?.['errors']?.['required']">
+                    Amount is required
+                  </small>
+                  <small *ngIf="amount?.['errors']?.['min']"
+                    >Min of N100
+                  </small>
+                </div>
+              </div>
+              <div class="d-grid gap-2 mt-5 mb-3">
+                <button
+                  (click)="onFormSubmit()"
+                  class="btn btn-primary modal-btn"
+                  [disabled]="amountForm.invalid || loading"
+                  type="button"
+                >
+                  <span
+                    *ngIf="loading"
+                    class="spinner-border spinner-border-sm mr-1"
+                  ></span>
+                  Submit
+                </button>
+              </div>
+            </form>
+          </div>
+          <!-- MODAL FOOTER -->
+          <!-- <div class="modal-footer">
             <button
               type="button"
               class="btn btn-secondary"
@@ -239,8 +226,14 @@
             >
               Close
             </button>
-            <button type="button" class="btn btn-primary">Save changes</button>
-          </div>
+            <button
+              type="button"
+              class="btn btn-primary"
+              (click)="onFormSubmit()"
+            >
+              Save changes
+            </button>
+          </div> -->
         </div>
       </div>
     </div>

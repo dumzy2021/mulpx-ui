@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -31,6 +32,7 @@ import { HighchartsChartModule } from 'highcharts-angular';
     AppRoutingModule,
     ReactiveFormsModule,
     HighchartsChartModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

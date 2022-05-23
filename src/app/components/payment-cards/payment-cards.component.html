@@ -1,76 +1,91 @@
 <div class="row">
-  <div class="col-12 col-sm-6 col-md-4  col-xl-2 flex-xl-grow-1">
+  <div class="col-12 col-sm-6 col-md-4 col-xl-2 flex-xl-grow-1">
     <div class="payment-card mb-3">
       <span class="card-icon">
-        <img src="assets/icons/Vector.svg" alt="">
+        <img src="assets/icons/Vector.svg" alt="" />
       </span>
-      <p class="card-amount">N980,000</p>
-      <p class="card-title">
-        available balance
+      <p class="card-amount">
+        {{
+          dashboardStats?.availableBalance
+            ? (dashboardStats?.availableBalance | currency: "N")
+            : 0
+        }}
       </p>
+      <p class="card-title">available balance</p>
       <span class="card-refresh">
-        <img src="assets/icons/refresh.png" alt="">
-
+        <img src="assets/icons/refresh.png" alt="" />
       </span>
     </div>
   </div>
-  <div class="col-12 col-sm-6 col-md-4  col-xl-2 flex-xl-grow-1">
+  <div class="col-12 col-sm-6 col-md-4 col-xl-2 flex-xl-grow-1">
     <div class="payment-card mb-3">
       <span class="card-icon">
-        <img src="assets/icons/Vector.svg" alt="">
+        <img src="assets/icons/Vector.svg" alt="" />
       </span>
-      <p class="card-amount">N980,000</p>
-      <p class="card-title">
-        total sent payment
+      <p class="card-amount">
+        {{
+          dashboardStats?.totalSentPayment
+            ? (dashboardStats?.totalSentPayment | currency: "N")
+            : 0
+        }}
       </p>
+      <p class="card-title">total sent payment</p>
       <span class="card-refresh">
-        <img src="assets/icons/refresh.png" alt="">
-
+        <img src="assets/icons/refresh.png" alt="" />
       </span>
     </div>
   </div>
-  <div class="col-12 col-sm-6 col-md-4  col-xl-2 flex-xl-grow-1">
+  <div class="col-12 col-sm-6 col-md-4 col-xl-2 flex-xl-grow-1">
     <div class="payment-card mb-3">
       <span class="card-icon">
-        <img src="assets/icons/Vector.svg" alt="">
+        <img src="assets/icons/Vector.svg" alt="" />
       </span>
-      <p class="card-amount">N980,000</p>
-      <p class="card-title">
-        total recieved payment
+      <p class="card-amount">
+        {{
+          dashboardStats?.totalReceivedPayment
+            ? (dashboardStats?.totalReceivedPayment | currency: "N")
+            : 0
+        }}
       </p>
+      <p class="card-title">total recieved payment</p>
       <span class="card-refresh">
-        <img src="assets/icons/refresh.png" alt="">
-
+        <img src="assets/icons/refresh.png" alt="" />
       </span>
     </div>
   </div>
-  <div class="col-12 col-sm-6 col-md-4  col-xl-2 flex-xl-grow-1">
+  <div class="col-12 col-sm-6 col-md-4 col-xl-2 flex-xl-grow-1">
     <div class="payment-card mb-3">
       <span class="card-icon">
-        <img src="assets/icons/Vector.svg" alt="">
+        <img src="assets/icons/Vector.svg" alt="" />
       </span>
-      <p class="card-amount">N980,000</p>
-      <p class="card-title">
-        data bank balance
+      <p class="card-amount">
+        {{
+          dashboardStats?.dataBankBalance
+            ? (dashboardStats?.dataBankBalance | currency: "N")
+            : 0
+        }}
       </p>
+      <p class="card-title">data bank balance</p>
       <span class="card-refresh">
-        <img src="assets/icons/refresh.png" alt="">
-
+        <img src="assets/icons/refresh.png" alt="" />
       </span>
     </div>
   </div>
-  <div class="col-12 col-sm-6 col-md-4  col-xl-2 flex-xl-grow-1">
+  <div class="col-12 col-sm-6 col-md-4 col-xl-2 flex-xl-grow-1">
     <div class="payment-card mb-3">
       <span class="card-icon">
-        <img src="assets/icons/Vector.svg" alt="">
+        <img src="assets/icons/Vector.svg" alt="" />
       </span>
-      <p class="card-amount">N980,000</p>
-      <p class="card-title">
-        total no. of transactions
+      <p class="card-amount">
+        {{
+          dashboardStats?.totalNoOfTransactions
+            ? dashboardStats?.totalNoOfTransactions
+            : 0
+        }}
       </p>
+      <p class="card-title">total no. of transactions</p>
       <span class="card-refresh">
-        <img src="assets/icons/refresh.png" alt="">
-
+        <img src="assets/icons/refresh.png" alt="" />
       </span>
     </div>
   </div>
