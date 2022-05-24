@@ -87,57 +87,12 @@
   </div>
   <!-- OVERVIEW COMPONENT -->
   <div class="col-12 col-md-6 mb-5 col-xxl-4 shadow-sm">
-    <div class="recent-activies">
-      <div class="d-flex justify-content-between align-items-center">
-        <p class="activity-title">Overview payment</p>
-        <p class="see-all">see all</p>
-      </div>
-      <div class="row">
-        <div class="overview-container">
-          <div
-            class="col-12 mt-3 col-sm-6 col-md-12"
-            *ngFor="let transaction of userTransactions"
-          >
-            <div class="activity-card">
-              <div class="activity-icon">
-                <img src="assets/images/message.png" alt="" />
-              </div>
-              <div class="activity-content">
-                <div class="activity-box-1">
-                  <p class="activity-name">
-                    {{ transaction.transactionDescription }}
-                  </p>
-                  <p class="activity-log">
-                    {{ transaction.transactionStatus }}
-                  </p>
-                </div>
-                <div class="activity-box-2">
-                  <p class="activity-amount">
-                    {{ transaction.transactionAmount | currency: "N" }}
-                  </p>
-                  <p class="activity-subtitle">
-                    {{ transaction.transactionType }}
-                  </p>
-                  <p class="activity-date">
-                    {{ transaction.transactionDate | date: "shortDate" }}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <app-recent-activities></app-recent-activities>
   </div>
   <!--CHART COMPONENT -->
   <div class="col-12 col-xxl-4 shadow-sm mb-5">
     <div class="chart h-100">
-      <highcharts-chart
-        [Highcharts]="highcharts"
-        [options]="chartOptions"
-        [style]="{ width: '100%', display: 'block', height: '100%' }"
-      >
-      </highcharts-chart>
+      <app-overview-map></app-overview-map>
     </div>
   </div>
   <!-- SEND MONEY MODAL -->

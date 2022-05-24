@@ -1,96 +1,37 @@
-<div class="col-12 col-md-6 mb-5">
-  <div class="recent-activies">
-    <div class="d-flex justify-content-between align-items-center">
-      <p class="activity-title">Overview payment</p>
-      <p class="see-all">see all</p>
-    </div>
-    <div class="row">
-      <div class="col-12 mt-3">
+<div class="recent-activies">
+  <div class="d-flex justify-content-between align-items-center">
+    <p class="activity-title">Overview payment</p>
+    <p class="see-all">see all</p>
+  </div>
+  <div class="row">
+    <div class="overview-container">
+      <div
+        class="col-12 mt-3 col-sm-6 col-md-12"
+        *ngFor="let transaction of userTransactions"
+      >
         <div class="activity-card">
           <div class="activity-icon">
             <img src="assets/images/message.png" alt="" />
           </div>
           <div class="activity-content">
             <div class="activity-box-1">
-              <p class="activity-name">salary payment</p>
-              <p class="activity-log">12 of 12 people sent</p>
+              <p class="activity-name">
+                {{ transaction.transactionDescription }}
+              </p>
+              <p class="activity-log">
+                {{ transaction.transactionStatus }}
+              </p>
             </div>
             <div class="activity-box-2">
-              <p class="activity-amount">N200,000</p>
-              <p class="activity-subtitle">total payment</p>
-              <p class="activity-date">today</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-12 mt-3">
-        <div class="activity-card">
-          <div class="activity-icon">
-            <img src="assets/images/message.png" alt="" />
-          </div>
-          <div class="activity-content">
-            <div class="activity-box-1">
-              <p class="activity-name">salary payment</p>
-              <p class="activity-log">12 of 12 people sent</p>
-            </div>
-            <div class="activity-box-2">
-              <p class="activity-amount">N200,000</p>
-              <p class="activity-subtitle">total payment</p>
-              <p class="activity-date">today</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-12 mt-3">
-        <div class="activity-card">
-          <div class="activity-icon">
-            <img src="assets/images/message.png" alt="" />
-          </div>
-          <div class="activity-content">
-            <div class="activity-box-1">
-              <p class="activity-name">salary payment</p>
-              <p class="activity-log">12 of 12 people sent</p>
-            </div>
-            <div class="activity-box-2">
-              <p class="activity-amount">N200,000</p>
-              <p class="activity-subtitle">total payment</p>
-              <p class="activity-date">today</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-12 mt-3">
-        <div class="activity-card">
-          <div class="activity-icon">
-            <img src="assets/images/message.png" alt="" />
-          </div>
-          <div class="activity-content">
-            <div class="activity-box-1">
-              <p class="activity-name">salary payment</p>
-              <p class="activity-log">12 of 12 people sent</p>
-            </div>
-            <div class="activity-box-2">
-              <p class="activity-amount">N200,000</p>
-              <p class="activity-subtitle">total payment</p>
-              <p class="activity-date">today</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-12 mt-3">
-        <div class="activity-card">
-          <div class="activity-icon">
-            <img src="assets/images/message.png" alt="" />
-          </div>
-          <div class="activity-content">
-            <div class="activity-box-1">
-              <p class="activity-name">salary payment</p>
-              <p class="activity-log">12 of 12 people sent</p>
-            </div>
-            <div class="activity-box-2">
-              <p class="activity-amount">N200,000</p>
-              <p class="activity-subtitle">total payment</p>
-              <p class="activity-date">today</p>
+              <p class="activity-amount">
+                {{ transaction.transactionAmount | currency: "N" }}
+              </p>
+              <p class="activity-subtitle">
+                {{ transaction.transactionType }}
+              </p>
+              <p class="activity-date">
+                {{ transaction.transactionDate | date: "shortDate" }}
+              </p>
             </div>
           </div>
         </div>
