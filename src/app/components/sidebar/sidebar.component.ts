@@ -17,7 +17,6 @@ export class SidebarComponent implements OnInit {
   getUserDetails() {
     this.userService.getUserDetails().subscribe({
       next: (data: UserDetails) => {
-        console.log(data);
         this.user = data;
       },
     });
