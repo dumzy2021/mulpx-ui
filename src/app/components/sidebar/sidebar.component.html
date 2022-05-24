@@ -1,1 +1,124 @@
-<p class="hello">sidebar works!</p>
+<aside class="sidebar px-4">
+  <div class="mulpx-logo text-center mb-4">
+    <img src="assets/images/mulpx-logo.svg" alt="" />
+  </div>
+
+  <div
+    class="d-flex flex-grow-1 flex-column flex-shrink-0 py-3 sidebar-contents"
+  >
+    <div class="user-details mb-3 text-center">
+      <img src="assets/images/user-img.jpg" alt="" class="user-img" />
+      <h5 class="user-name mt-2">Kelvin Dimeji</h5>
+      <p class="text-black-50">Software dev</p>
+    </div>
+    <div class="sidebar-nav">
+      <ul class="nav nav-pills flex-column mb-auto sidebar-nav pb-5">
+        <li class="nav-item mb-2">
+          <a
+            routerLink="/"
+            routerLinkActive="nav-link-active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="nav-link"
+            aria-current="page"
+            title="Dashboard"
+          >
+            <img
+              src="assets/icons/dashboard.svg"
+              alt="sidebar icons"
+              class="nav-icon"
+            />
+            Dashboard
+          </a>
+        </li>
+        <li class="nav-item mb-2">
+          <a
+            routerLink="/wallet"
+            routerLinkActive="nav-link-active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="nav-link"
+            aria-current="page"
+            title="Wallet balance"
+          >
+            <img
+              src="assets/icons/weight.svg"
+              alt="sidebar icons"
+              class="nav-icon"
+            />
+            wallet balance
+          </a>
+        </li>
+        <li class="nav-item mb-2">
+          <a
+            routerLink="/transactions"
+            routerLinkActive="nav-link-active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="nav-link"
+            aria-current="page"
+            title="Transactions"
+          >
+            <img
+              src="assets/icons/history.svg"
+              alt="sidebar icons"
+              class="nav-icon"
+            />
+            Transactions
+          </a>
+        </li>
+        <li class="nav-item mb-2">
+          <a
+            routerLink="/bank"
+            routerLinkActive="nav-link-active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="nav-link"
+            aria-current="page"
+            title="Data bank"
+          >
+            <img
+              src="assets/icons/big-data.svg"
+              alt="sidebar icons"
+              class="nav-icon"
+            />
+            Data bank
+          </a>
+        </li>
+        <li class="nav-item mb-2">
+          <a
+            routerLink="/chart"
+            routerLinkActive="nav-link-active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="nav-link"
+            aria-current="page"
+            title="Chart support"
+          >
+            <img
+              src="assets/icons/support.svg"
+              alt="sidebar icons"
+              class="nav-icon"
+            />
+            Chart support
+          </a>
+        </li>
+        <li class="nav-item mb-2">
+          <a
+            routerLink="/settings"
+            routerLinkActive="nav-link-active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="nav-link"
+            aria-current="page"
+            title="Settings"
+          >
+            <img
+              src="assets/icons/settings.svg"
+              alt="sidebar icons"
+              class="nav-icon"
+            />
+            Settings
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="refer my-3 text-center">
+      <img src="assets/images/refer.png" alt="" />
+    </div>
+  </div>
+</aside>
