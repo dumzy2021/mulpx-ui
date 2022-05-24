@@ -7,9 +7,13 @@
     class="d-flex flex-grow-1 flex-column flex-shrink-0 py-3 sidebar-contents"
   >
     <div class="user-details mb-3 text-center">
-      <img src="assets/images/user-img.jpg" alt="" class="user-img" />
-      <h5 class="user-name mt-2">Kelvin Dimeji</h5>
-      <p class="text-black-50">Software dev</p>
+      <img
+        src="{{ user?.profilePicture || 'assets/images/user-img.jpg' }}"
+        alt=""
+        class="user-img"
+      />
+      <h5 class="user-name mt-2">{{ user?.firstName || "User name" }}</h5>
+      <p class="text-black-50">{{ user?.jobTitle || "Job title" }}</p>
     </div>
     <div class="sidebar-nav">
       <ul class="nav nav-pills flex-column mb-auto sidebar-nav pb-5">
