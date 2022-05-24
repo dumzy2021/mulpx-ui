@@ -56,3 +56,8 @@
   top: -5px;
   right: -5px;
 }
+@media (min-width: 992px) {
+  .search-form {
+    width: 45%;
+  }
+}
