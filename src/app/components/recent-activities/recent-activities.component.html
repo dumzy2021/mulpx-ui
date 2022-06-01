@@ -5,6 +5,9 @@
   </div>
   <div class="row">
     <div class="overview-container">
+      <div class="" *ngIf="!userTransactions.length">
+        <h6 class="text-black-50 mt-5 text-center">No recent activity!</h6>
+      </div>
       <div
         class="col-12 mt-3 col-sm-6 col-md-12"
         *ngFor="let transaction of userTransactions"
